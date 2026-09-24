@@ -14,10 +14,16 @@
   <header class="top-bar">
     <div class="container top-bar-content">
       <div class="contact-info">
-        <span><i class="fa-solid fa-location-dot"></i> Chabahil-07, Kathmandu, Nepal</span>
-        <a href="tel:+97714567890"><i class="fa-solid fa-phone"></i> +977-1-4567890</a>
-        <a href="https://wa.me/9779801234567" target="_blank"><i class="fa-brands fa-whatsapp"></i> +977-9801234567</a>
-        <a href="mailto:info@auroraedu.com.np"><i class="fa-solid fa-envelope"></i> info@auroraedu.com.np</a>
+        <a href="https://www.google.com/maps/place/Aurora+Education+Foundation+Pvt.+Ltd./@27.7180009,85.346472,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb19003bf50e53:0xe11a2575eef23519!8m2!3d27.7180009!4d85.3490469!16s%2Fg%2F11z003rxcx?entry=ttu&g_ep=EgoyMDI2MDkyMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="location-link">
+          <i class="fa-solid fa-location-dot"></i>
+          Chabahil-07, Kathmandu, Nepal
+        </a>
+        <a href="tel:+9779851321500"><i class="fa-solid fa-phone"></i> +977-01-5911096</a>
+        <a href="https://wa.me/9779851003826" target="_blank"><i class="fa-brands fa-whatsapp"></i> +977-9851003826/9851321500</a>
+        <a href="mailto:admission@auroraeducation.com.np"><i class="fa-solid fa-envelope"></i> admission@auroraeducation.com.np</a>
       </div>
     </div>
   </header>
@@ -25,21 +31,17 @@
   <!-- Main Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-content">
-      <a href="#" class="logo" onclick="switchTab('home')">
-        <span class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-        <div>
-          <span class="logo-text">AURORA</span>
-          <span class="logo-subtext">Education Foundation</span>
-        </div>
+      <a href="#" class="logo" onclick="switchTab('home', event)">
+        <img src="Aurora_Education-removebg-preview.png" alt="Aurora Education Foundation Logo" style="max-height: 130px; width: auto;">
       </a>
       <ul class="nav-links">
-        <li><a href="javascript:void(0)" class="nav-btn active" onclick="switchTab('home')">Home</a></li>
-        <li><a href="javascript:void(0)" class="nav-btn" onclick="switchTab('about')">About</a></li>
-        <li><a href="javascript:void(0)" class="nav-btn" onclick="switchTab('products')">Our Products</a></li>
-        <li><a href="javascript:void(0)" class="nav-btn" onclick="switchTab('visa')">Visa & Docs</a></li>
-        <li><a href="javascript:void(0)" class="nav-btn" onclick="switchTab('stories')">Success Stories</a></li>
-        <li><a href="javascript:void(0)" class="nav-btn" onclick="switchTab('blog')">Blog/News</a></li>
-        <li><a href="javascript:void(0)" class="nav-btn" onclick="switchTab('contact')">Contact</a></li>
+        <li><a href="#" data-page="home" class="nav-btn active" onclick="switchTab('home', event)">Home</a></li>
+        <li><a href="#" data-page="about" class="nav-btn" onclick="switchTab('about', event)">About</a></li>
+        <li><a href="#" data-page="products" class="nav-btn" onclick="switchTab('products', event)">Our Products</a></li>
+        <li><a href="#" data-page="visa" class="nav-btn" onclick="switchTab('visa', event)">Visa & Docs</a></li>
+        <li><a href="#" data-page="stories" class="nav-btn" onclick="switchTab('stories', event)">Success Stories</a></li>
+        <li><a href="#" data-page="blog" class="nav-btn" onclick="switchTab('blog', event)">Blog/News</a></li>
+        <li><a href="#" data-page="contact" class="nav-btn" onclick="switchTab('contact', event)">Contact</a></li>
       </ul>
       <button class="btn btn-gold" onclick="openBookingModal()">Book Counselling</button>
     </div>
@@ -53,54 +55,64 @@
         <h1>Start Your Study Abroad Journey with Aurora</h1>
         <p>Empowering Nepalese students to achieve their academic dreams in the UK, Australia, Canada, New Zealand, Japan, and South Korea with expert guidance and high visa success rates.</p>
         <div class="hero-actions">
-          <button class="btn btn-gold" onclick="switchTab('products')"><i class="fa-solid fa-compass"></i> Explore Destinations</button>
+          <button class="btn btn-gold" onclick="scrollToDestinations()"><i class="fa-solid fa-compass"></i> Explore Destinations</button>
           <button class="btn btn-outline" onclick="openBookingModal()"><i class="fa-solid fa-calendar-check"></i> Book Counselling</button>
         </div>
       </div>
     </div>
 
     <!-- Quick Access Cards -->
-    <div class="container section-padding">
+    <div id="popular-destinations" class="container section-padding">
       <div class="section-title">
         <h2>Popular Study Destinations</h2>
-        <p>Select your dream destination to explore universities, requirements, and counsellors.</p>
       </div>
       <div class="destination-grid">
         <div class="dest-card" onclick="selectDestination('uk')">
-          <div class="flag">🇬🇧</div>
+          <div class="flag">
+            <img src="UK flag.png" alt="United Kingdom Flag" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+          </div>
           <h3>United Kingdom</h3>
-          <p>1-Year Master's & Post-Study Work Rights</p>
-          <span class="link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          <p>Shorter Course Duration & Post-Study Work Rights</p>
         </div>
+
         <div class="dest-card" onclick="selectDestination('australia')">
-          <div class="flag">🇦🇺</div>
+          <div class="flag">
+            <img src="Australia fag.jpg" alt="Australia Flag" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+          </div>
           <h3>Australia</h3>
           <p>World-Class Education & Vibrant Lifestyle</p>
-          <span class="link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
         </div>
+
         <div class="dest-card" onclick="selectDestination('canada')">
-          <div class="flag">🇨🇦</div>
+          <div class="flag">
+            <img src="Canada flag.jpg" alt="Canada Flag" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+          </div>
           <h3>Canada</h3>
           <p>Affordable Tuition & PR Pathways</p>
-          <span class="link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
         </div>
+
         <div class="dest-card" onclick="selectDestination('nz')">
-          <div class="flag">🇳🇿</div>
+          <div class="flag">
+            <img src="NZ flag.jpg" alt="New Zealand Flag" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+          </div>
           <h3>New Zealand</h3>
           <p>Safe Environment & Practical Learning</p>
-          <span class="link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
         </div>
+
         <div class="dest-card" onclick="selectDestination('japan')">
-          <div class="flag">🇯🇵</div>
+          <div class="flag">
+            <img src="japan flag.jpg" alt="Japan Flag" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+          </div>
           <h3>Japan</h3>
           <p>High Technology & Rich Culture</p>
-          <span class="link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
         </div>
+
         <div class="dest-card" onclick="selectDestination('skorea')">
-          <div class="flag">🇰🇷</div>
+          <div class="flag">
+            <img src="SK flag.png" alt="South Korea Flag" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+          </div>
           <h3>South Korea</h3>
           <p>Cutting-Edge Tech & Generous Scholarships</p>
-          <span class="link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </div>
     </div>
@@ -110,28 +122,37 @@
       <div class="container">
         <div class="section-title">
           <h2>Why Choose Aurora Education?</h2>
-          <p>Fast-track solutions engineered for maximum visa approval and career success.</p>
         </div>
         <div class="services-grid">
           <div class="service-box">
-            <i class="fa-solid fa-id-card-clip"></i>
-            <h4>Free Profile Evaluation</h4>
-            <p>Thorough evaluation of your academics, finances, and career preferences.</p>
+            <i class="fa-solid fa-user-check"></i>
+            <h4>Counseling by Certified Counselors</h4>
+            <p>Personalized guidance from QEAC and TITI-certified educational advisors with proven success.</p>
           </div>
           <div class="service-box">
             <i class="fa-solid fa-building-columns"></i>
             <h4>Direct University Admission</h4>
-            <p>Fast-tracked offer letter processing through direct official partnerships.</p>
+            <p>Fast-tracked offer letter processing through direct official university partnerships worldwide.</p>
           </div>
           <div class="service-box">
             <i class="fa-solid fa-award"></i>
-            <h4>Scholarship Assistance</h4>
-            <p>Guidance on securing merit-based grants and tuition waivers.</p>
+            <h4>High Visa Success Rate</h4>
+            <p>Meticulous documentation checks and interview preparation tailored to immigration standards.</p>
           </div>
           <div class="service-box">
-            <i class="fa-solid fa-passport"></i>
-            <h4>Certified Visa Filing</h4>
-            <p>Flawless documentation alignment to meet strict immigration criteria.</p>
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <h4>Transparent & Ethical Guidance</h4>
+            <p>Clear financial planning, zero hidden charges, and honest profile assessments from day one.</p>
+          </div>
+          <div class="service-box">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h4>Comprehensive Test Preparation</h4>
+            <p>Expert-led IELTS, PTE, and TOEFL classes with regular mock tests and updated study materials.</p>
+          </div>
+          <div class="service-box">
+            <i class="fa-solid fa-plane-arrival"></i>
+            <h4>Pre-Departure & Post-Arrival Support</h4>
+            <p>End-to-end assistance including flight booking, accommodation setup, and airport pickups.</p>
           </div>
         </div>
       </div>
@@ -147,55 +168,118 @@
 
     <!-- Our Beginning -->
     <div class="about-card">
-      <h3><i class="fa-solid fa-landmark"></i> Our Beginning & Mission</h3>
-      <p>Founded with a vision to streamline foreign education processing, Aurora Education Foundation has grown into a leading agency in Kathmandu. Our mission is to empower students with genuine, transparent guidance while ensuring zero compromises on visa compliances.</p>
+      <!-- Our Beginning & Overview -->
+    <div class="about-card">
+      <h3><i class="fa-solid fa-landmark"></i> Our Beginning & Vision</h3>
+      <p>Aurora Education Foundation was established in 2018 A.D. with a noble vision to help, guide, and support students in their educational journey. The foundation is dedicated to empowering learners by providing proper direction, encouragement, counseling, and opportunities that can help them achieve their academic and career goals. It believes that every student deserves access to the right guidance and a quality education in order to build a bright and successful future.</p>
+      <p style="margin-top: 12px;">The foundation works for the overall development of students by focusing not only on academic progress but also on personal growth, confidence, leadership, and social responsibility. Through its various activities and programs, Aurora Education Foundation aims to inspire students to discover their potential, overcome challenges, and become capable, responsible, and productive members of society. It serves as a supportive platform for students who seek motivation, educational advice, and a clear path toward success.</p>
     </div>
 
+    <!-- Mission Section -->
+    <div class="about-card" style="margin-top: 20px;">
+      <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
+      <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+        <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 8px;"></i> To guide students in choosing the right educational course, institution, and career path according to their interests and abilities.</li>
+        <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 8px;"></i> To provide counseling, mentorship, and academic support to help students overcome educational challenges.</li>
+        <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 8px;"></i> To assist needy, deserving, and underprivileged students in accessing quality education and better opportunities.</li>
+        <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 8px;"></i> To develop students’ skills, confidence, creativity, and leadership qualities for their personal and professional growth.</li>
+        <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 8px;"></i> To create awareness about the importance of education and encourage lifelong learning for a better future and a better society.</li>
+      </ul>
+    </div>
     <!-- Founders Section -->
     <h3 class="sub-heading">Leadership & Founders</h3>
-    <div class="team-grid">
+   <div class="team-grid">
       <div class="team-card">
-        <div class="avatar"><i class="fa-solid fa-user-tie"></i></div>
-        <h4>Bikram Dhamala</h4>
-        <p class="role">Founder & Managing Director</p>
-        <p class="phone"><i class="fa-solid fa-phone"></i> +977-9801234567</p>
+        <div class="avatar img-avatar">
+            <img src="c:\Users\bikra\OneDrive\Desktop\VS Code\AEF\Sudip puri.jpg" 
+               alt="Pratik Dhital" 
+               width="200" 
+               style="width: 200%; height: 160%; object-fit: cover;">
+        </div>
+        <h4>Sudip Puri</h4>
+        <p class="role">Chairperson</p>
+        <p class="phone"><a href="tel:+9779851321500"><i class="fa-solid fa-phone"></i> +977-9851003826</a></p>
         <p class="bio">10+ years of experience in strategic overseas educational leadership and university alliance development.</p>
       </div>
       <div class="team-card">
-        <div class="avatar"><i class="fa-solid fa-user-tie"></i></div>
-        <h4>Anish Sharma</h4>
-        <p class="role">Co-Founder & Head of Operations</p>
-        <p class="phone"><i class="fa-solid fa-phone"></i> +977-9801234568</p>
+        <div class="avatar img-avatar">
+          <img src="c:\Users\bikra\OneDrive\Desktop\VS Code\AEF\Pratik Dhital.jpg" 
+               alt="Pratik Dhital" 
+               width="200" 
+               style="width: 200%; height: 160%; object-fit: cover;">
+        </div>
+        <h4>Pratik Dhital</h4>
+        <p class="role">Executive Director</p>
+        <p class="phone"><a href="tel:+9779851321500"><i class="fa-solid fa-phone"></i> +977-9851321500</a></p>
         <p class="bio">Specialist in international visa compliance frameworks and educational quality management systems.</p>
       </div>
     </div>
 
-    <!-- Team Section -->
-    <h3 class="sub-heading">Meet Our Expert Counsellors</h3>
-    <div class="team-grid">
+    <!-- Team Section (5 Counselors Grid) -->
+    <h3 class="sub-heading">Meet Our Expert Team</h3>
+    <div class="team-grid team-grid-5">
       <div class="team-card">
-        <div class="avatar"><i class="fa-solid fa-user-doctor"></i></div>
-        <h4>Sita Adhikari</h4>
-        <p class="role">Senior UK Counsellor</p>
-        <p class="phone"><i class="fa-solid fa-phone"></i> +977-9801234569</p>
+        <div class="avatar img-avatar">
+           <img src="c:\Users\bikra\OneDrive\Desktop\VS Code\AEF\Samyog rai.jpg" 
+               alt="Samyog" 
+               width="200" 
+               style="width: 150%; height: 150%; object-fit: cover;">
+        </div>
+        <h4>Samyog Rai</h4>
+        <p class="role">Senior UK & Australia & Canada Counsellor</p>
+        <p class="role">Operations Incharge</p>
+       <p class="phone"><a href="tel:+9779768552904"><i class="fa-solid fa-phone"></i> +977-9768552904</a></p>
+      </div>
+
+      <div class="team-card">
+        <div class="avatar img-avatar">
+    <img src="c:\Users\bikra\OneDrive\Desktop\VS Code\AEF\Sakku.jpg" 
+               alt="Sakku" 
+               width="200" 
+               style="width: 150%; height: 150%; object-fit: cover;">
+        </div>
+        <h4>Sukuntala Puri</h4>
+        <p class="role">UK & Japan & S Korea Counsellor</p>
+        <p class="role">Admission Officer</p>
+        <p class="phone"><a href="tel:+9779860378406"><i class="fa-solid fa-phone"></i> +977-9860378406</a></p>
+      </div>
+
+
+      <div class="team-card">
+        <div class="avatar img-avatar">
+           <img src="c:\Users\bikra\OneDrive\Desktop\VS Code\AEF\mukesh lamichhane.jpg" 
+               alt="Mukesh Lamichhane" 
+               width="200" 
+               style="width: 150%; height: 150%; object-fit: cover;">
+        </div>
+        <h4>Mukesh Lamichhane</h4>
+        <p class="role">NewZealand & Japan & South Korea Counsellor</p>
+        <p class="role">Business Development Officer</p>
+ <p class="phone"><a href="tel:+9779851348506"><i class="fa-solid fa-phone"></i> +977-9851348506</a></p>
+      </div>
+       <div class="team-card">
+        <div class="avatar img-avatar">
+         <img src="c:\Users\bikra\OneDrive\Desktop\VS Code\AEF\sujata katwal.jpg" 
+               alt="sujata" 
+               width="200" 
+               style="width: 150%; height: 150%; object-fit: cover;">
+        </div>
+        <h4>Sujata Katwal</h4>
+         <p class="role">UK & Japan Counsellor</p>
+        <p class="role">Admission Officer</p>
+  <p class="phone"><a href="tel:+9779768552905"><i class="fa-solid fa-phone"></i> +977-9768552905</a></p>
       </div>
       <div class="team-card">
-        <div class="avatar"><i class="fa-solid fa-user-doctor"></i></div>
-        <h4>Rohan Karki</h4>
-        <p class="role">Australia & NZ Lead</p>
-        <p class="phone"><i class="fa-solid fa-phone"></i> +977-9801234570</p>
-      </div>
-      <div class="team-card">
-        <div class="avatar"><i class="fa-solid fa-user-doctor"></i></div>
-        <h4>Pooja Thapa</h4>
-        <p class="role">Canada & Visa Officer</p>
-        <p class="phone"><i class="fa-solid fa-phone"></i> +977-9801234571</p>
-      </div>
-      <div class="team-card">
-        <div class="avatar"><i class="fa-solid fa-user-doctor"></i></div>
-        <h4>Kenji Sato</h4>
-        <p class="role">Japan & East Asia Advisor</p>
-        <p class="phone"><i class="fa-solid fa-phone"></i> +977-9801234572</p>
+        <div class="avatar img-avatar">
+         <img src="c:\Users\bikra\OneDrive\Desktop\VS Code\AEF\bikss.jpeg" 
+               alt="Bikss" 
+               width="200" 
+               style="width: 150%; height: 150%; object-fit: cover;">
+        </div>
+        <h4>Bikram Dhamala</h4>
+        <p class="role">UK & New Zealand Counsellor</p>
+        <p class="role">Operations Officer</p>
+  <p class="phone"><a href="tel:+9779768552905"><i class="fa-solid fa-phone"></i> +977-9768552905</a></p>
       </div>
     </div>
   </section>
@@ -208,12 +292,12 @@
     </div>
 
     <div class="country-tabs">
-      <button class="tab-btn active" onclick="switchCountryTab('uk')">🇬🇧 UK</button>
-      <button class="tab-btn" onclick="switchCountryTab('australia')">🇦🇺 Australia</button>
-      <button class="tab-btn" onclick="switchCountryTab('canada')">🇨🇦 Canada</button>
-      <button class="tab-btn" onclick="switchCountryTab('nz')">🇳🇿 New Zealand</button>
-      <button class="tab-btn" onclick="switchCountryTab('japan')">🇯🇵 Japan</button>
-      <button class="tab-btn" onclick="switchCountryTab('skorea')">🇰🇷 South Korea</button>
+      <button class="tab-btn active" onclick="switchCountryTab('uk', event)">🇬🇧 UK</button>
+      <button class="tab-btn" onclick="switchCountryTab('australia', event)">🇦🇺 Australia</button>
+      <button class="tab-btn" onclick="switchCountryTab('canada', event)">🇨🇦 Canada</button>
+      <button class="tab-btn" onclick="switchCountryTab('nz', event)">🇳🇿 New Zealand</button>
+      <button class="tab-btn" onclick="switchCountryTab('japan', event)">🇯🇵 Japan</button>
+      <button class="tab-btn" onclick="switchCountryTab('skorea', event)">🇰🇷 South Korea</button>
     </div>
 
     <div id="country-detail-box" class="about-card">
@@ -317,6 +401,7 @@
   </section>
 
   <!-- PAGE 7: CONTACT US -->
+<!-- PAGE 7: CONTACT US -->
   <section id="page-contact" class="page-section container section-padding">
     <div class="section-title">
       <h2>Visit Our Office / Contact Us</h2>
@@ -326,11 +411,47 @@
     <div class="contact-layout">
       <div class="about-card">
         <h3>Aurora Education Foundation</h3>
-        <p><i class="fa-solid fa-location-dot"></i> Chabahil-07, Kathmandu, Nepal (Way to KL Tower)</p>
-        <p><i class="fa-solid fa-phone"></i> +977-1-4567890 / +977-9801234567</p>
-        <p><i class="fa-brands fa-whatsapp"></i> +977-9801234567</p>
-        <p><i class="fa-solid fa-envelope"></i> info@auroraedu.com.np</p>
-        <p><i class="fa-solid fa-clock"></i> Sunday – Friday: 9:00 AM – 5:00 PM</p>
+        
+        <!-- Location Link -->
+        <p>
+          <a href="https://maps.app.goo.gl/eJwx9JKddv46416P8" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-location-dot"></i> Chabahil-07, Kathmandu, Nepal (Way to KL Tower)
+          </a>
+        </p>
+
+        <!-- Telephone Call Links -->
+        <p>
+          <i class="fa-solid fa-phone"></i> 
+          <a href="tel:+977-01-5911096">+977-01-5911096</a>
+        </p>
+
+        <!-- Email (Gmail) Link -->
+        <p>
+          <a href="mailto:admission@auroraeducation.com.np">
+            <i class="fa-solid fa-envelope"></i> admission@auroraeducation.com.np
+          </a>
+        </p>
+
+        <!-- Opening Hours -->
+        <p>
+          <i class="fa-solid fa-clock"></i> Sunday – Friday: 8:00 AM – 7:00 PM
+        </p>
+
+        <!-- Social Media Links -->
+        <div class="contact-socials" style="margin-top: 15px; display: flex; gap: 15px; align-items: center;">
+          <a href="https://www.facebook.com/profile.php?id=61551089372532" target="_blank" rel="noopener noreferrer" title="Facebook">
+            <i class="fa-brands fa-facebook fa-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/aurora_education_foundation/" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <i class="fa-brands fa-instagram fa-lg"></i>
+          </a>
+          <a href="https://www.tiktok.com/@aurora_edu_foundation?_r=1&_t=ZS-9A0ZrHbf0y4" target="_blank" rel="noopener noreferrer" title="TikTok">
+            <i class="fa-brands fa-tiktok fa-lg"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/aurora-education-and-visa-services/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <i class="fa-brands fa-linkedin fa-lg"></i>
+          </a>
+        </div>
       </div>
 
       <div class="about-card">
@@ -344,48 +465,50 @@
       </div>
     </div>
   </section>
-
-  <!-- COUNSELLING BOOKING MODAL -->
+<!-- COUNSELLING BOOKING MODAL -->
   <div id="bookingModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeBookingModal()">&times;</span>
       <h3>Book Free Counselling</h3>
-      <form onsubmit="handleBookingSubmit(event)">
+      
+      <!-- Added id="bookingForm" for easy JS reset -->
+      <form id="bookingForm" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST">
         <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" required placeholder="John Doe">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="Full Name" required placeholder="Your Name">
         </div>
+
         <div class="form-group">
-          <label>Phone / WhatsApp</label>
-          <input type="tel" required placeholder="+977 9800000000">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="Phone Number" required placeholder="+977 9800000000">
         </div>
+
         <div class="form-group">
-          <label>Preferred Destination</label>
-          <select id="modal-dest-select">
-            <option value="uk">United Kingdom</option>
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="nz">New Zealand</option>
-            <option value="japan">Japan</option>
-            <option value="skorea">South Korea</option>
+          <label for="modal-dest-select">Preferred Destination</label>
+          <!-- Added onchange event and default disabled option -->
+          <select id="modal-dest-select" name="Preferred Destination" required onchange="filterCounsellors()">
+            <option value="" disabled selected>Select Destination</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Australia">Australia</option>
+            <option value="Canada">Canada</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Japan">Japan</option>
+            <option value="South Korea">South Korea</option>
           </select>
         </div>
+
         <div class="form-group">
-          <label>Preferred Counsellor</label>
-          <select id="modal-counsellor-select">
-            <option value="any">Any Available Counsellor</option>
-            <option value="bikram">Bikram Dhamala (UK)</option>
-            <option value="sita">Sita Adhikari (UK)</option>
-            <option value="rohan">Rohan Karki (Australia / NZ)</option>
-            <option value="pooja">Pooja Thapa (Canada)</option>
-            <option value="kenji">Kenji Sato (Japan / SK)</option>
+          <label for="modal-counsellor-select">Preferred Counsellor</label>
+          <select id="modal-counsellor-select" name="Preferred Counsellor">
+            <option value="Any Available Counsellor">Any Available Counsellor</option>
+            <!-- Dynamic options will be populated here by JavaScript -->
           </select>
         </div>
+
         <button type="submit" class="btn btn-gold" style="width:100%; margin-top:10px;">Confirm Appointment</button>
       </form>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
