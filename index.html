@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Education Foundation | Study Abroad Consultancy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Contact Bar -->
+  <header class="top-bar">
+    <div class="container top-bar-content">
+      <div class="contact-info">
+        <span><i class="fa-solid fa-location-dot"></i> Chabahil-07, Kathmandu, Nepal</span>
+        <a href="tel:+97714567890"><i class="fa-solid fa-phone"></i> +977-1-4567890</a>
+        <a href="https://wa.me/9779801234567" target="_blank"><i class="fa-brands fa-whatsapp"></i> +977-9801234567</a>
+        <a href="mailto:info@auroraedu.com.np"><i class="fa-solid fa-envelope"></i> info@auroraedu.com.np</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+        <div>
+          <span class="logo-text">AURORA</span>
+          <span class="logo-subtext">Education Foundation</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-primary open-modal">Book Counselling</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <span class="badge">Your Gateway to Global Education</span>
+      <h1>Start Your International Education Journey with Aurora</h1>
+      <p>Empowering Nepalese students to achieve their academic dreams in top global destinations with expert guidance and high visa success rates.</p>
+      
+      <div class="hero-actions">
+        <a href="#destinations" class="btn btn-secondary"><i class="fa-solid fa-compass"></i> Explore Destinations</a>
+        <button class="btn btn-primary open-modal"><i class="fa-solid fa-calendar-check"></i> Book Free Counselling</button>
+      </div>
+
+      <!-- Quick Fast-Track Services -->
+      <div id="services" class="quick-services">
+        <h3>Quick Fast-Track Services</h3>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h4>Free Profile Evaluation</h4>
+              <p>Comprehensive assessment of your academic record.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h4>Direct University Application</h4>
+              <p>Fast-track admission processing with partner universities.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h4>Scholarship Assistance</h4>
+              <p>Guidance on securing financial grants and scholarships.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h4>Certified Visa Documentation</h4>
+              <p>End-to-end support for high-yield visa filing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations Section -->
+  <section id="destinations" class="destinations">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Study Destinations</h2>
+        <p>Select your dream destination to explore top universities and entry requirements.</p>
+      </div>
+
+      <div class="destinations-grid">
+        <div class="country-card">
+          <div class="flag-icon">🇬🇧</div>
+          <h3>United Kingdom</h3>
+          <p>World-class research institutions and 1-year Master's programs.</p>
+        </div>
+        <div class="country-card">
+          <div class="flag-icon">🇦🇺</div>
+          <h3>Australia</h3>
+          <p>High quality of living, excellent post-study work rights, and vibrant cities.</p>
+        </div>
+        <div class="country-card">
+          <div class="flag-icon">🇨🇦</div>
+          <h3>Canada</h3>
+          <p>Globally recognized degrees and clear post-graduation immigration pathways.</p>
+        </div>
+        <div class="country-card">
+          <div class="flag-icon">🇳🇿</div>
+          <h3>New Zealand</h3>
+          <p>Safe environment, practical learning, and great work-life balance.</p>
+        </div>
+        <div class="country-card">
+          <div class="flag-icon">🇯🇵</div>
+          <h3>Japan</h3>
+          <p>Cutting-edge technology, rich culture, and abundant scholarship opportunities.</p>
+        </div>
+        <div class="country-card">
+          <div class="flag-icon">🇰🇷</div>
+          <h3>South Korea</h3>
+          <p>Top-tier universities, high tech innovations, and affordable tuition fees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counselling Modal -->
+  <div id="counsellingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Book Free Counselling</h2>
+      <form id="counsellingForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" required placeholder="+977 9800000000">
+        </div>
+        <div class="form-group">
+          <label for="destination">Preferred Destination</label>
+          <select id="destination">
+            <option value="uk">United Kingdom</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="new-zealand">New Zealand</option>
+            <option value="japan">Japan</option>
+            <option value="south-korea">South Korea</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
