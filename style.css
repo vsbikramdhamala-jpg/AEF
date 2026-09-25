@@ -1374,3 +1374,197 @@ button:disabled {
     padding: 18px;
   }
 }
+
+/* Final responsive safeguards */
+img {
+  max-width: 100%;
+}
+
+.logo {
+  min-width: 0;
+}
+
+.logo img {
+  display: block;
+  max-width: min(220px, 55vw);
+  max-height: 86px !important;
+  object-fit: contain;
+}
+
+.hero-content,
+.section-title,
+.about-card,
+.service-box,
+.team-card,
+.cost-card,
+.process-step,
+.footer-column {
+  min-width: 0;
+}
+
+.footer-column a,
+.footer-column p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .nav-content {
+    width: 100%;
+    padding: 10px 14px;
+  }
+
+  .nav-links {
+    flex-wrap: nowrap;
+    width: calc(100vw - 28px);
+    scrollbar-width: thin;
+  }
+
+  .nav-links li {
+    flex: 0 0 auto;
+  }
+
+  .nav-content > .btn {
+    width: 100%;
+  }
+
+  .hero {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .hero h1 {
+    max-width: 650px;
+  }
+
+  .destination-grid,
+  .services-grid,
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dest-card .flag {
+    height: 130px;
+    overflow: hidden;
+  }
+
+  .team-card .avatar {
+    width: 104px;
+    height: 104px;
+  }
+
+  .modal-content {
+    max-height: 86vh;
+    padding: 24px 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .section-padding {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .top-bar-content {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .contact-info {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .country-tabs {
+    gap: 6px;
+    padding: 6px !important;
+  }
+
+  #page-products .tab-btn {
+    flex: 1 1 calc(50% - 6px);
+    gap: 5px;
+    padding: 9px 7px;
+    font-size: 0.78rem;
+  }
+
+  #country-detail-box {
+    padding: 22px 16px;
+  }
+
+  .country-heading {
+    gap: 10px;
+  }
+
+  .country-heading img {
+    width: 48px;
+    height: 32px;
+  }
+
+  .destination-grid,
+  .services-grid,
+  .team-grid,
+  .process-grid,
+  .cost-grid,
+  .visa-checklist-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dest-card .flag {
+    height: 160px;
+  }
+
+  .team-card .avatar {
+    width: 112px;
+    height: 112px;
+  }
+
+  .team-table {
+    min-width: 900px;
+  }
+
+  .footer-logo-frame {
+    width: min(225px, 100%);
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding-right: 11px;
+    padding-left: 11px;
+  }
+
+  .hero {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .hero h1 {
+    font-size: 1.85rem;
+  }
+
+  .hero p {
+    font-size: 0.94rem;
+  }
+
+  .hero-established {
+    font-size: 0.82rem;
+  }
+
+  #page-products .tab-btn {
+    font-size: 0.72rem;
+  }
+
+  #page-products .tab-btn img {
+    width: 21px;
+    height: 14px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+  }
+}
