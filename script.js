@@ -1,44 +1,66 @@
-// Country details database for Page 3
+// Country, location, and institution database for Page 3.
 const countryData = {
   uk: {
-    title: "🇬🇧 Study in the United Kingdom",
-    desc: "The UK offers world-renowned universities, short 1-year Master's options, and Graduate Route post-study work visas.",
-    unis: ["University of Hertfordshire", "Coventry University", "University of Greenwich", "Ulster University"],
-    reqs: "IELTS 6.0 - 6.5 (or PTE equivalent), min 55% in academics, academic reference letters.",
+    name: "Study in the United Kingdom",
+    flag: "UK flag.png",
+    desc: "Explore partner universities and colleges by UK location, including London, England, Scotland, and Wales.",
+    locations: {
+      "London": ["University of Greenwich International College (UGIC)", "University of Greenwich", "University of Roehampton", "Ravensbourne University London", "BPP University", "University of East London", "University of West London", "Northumbria University - London Campus", "Middlesex University", "Regent College", "Arden University"],
+      "Outside London - England": ["University of Bradford International College (UBIC)", "University of Bradford", "University of Kent", "BIMM University", "University of Southampton", "University of Winchester", "Buckinghamshire New University", "University of Huddersfield", "Aston University", "Coventry University", "Teesside University", "University of Sunderland", "University of Bedfordshire", "University of Hertfordshire", "University of Chester", "Anglia Ruskin University", "University of Wolverhampton", "Solent University", "Health Sciences University", "Northumbria University - Newcastle upon Tyne"],
+      "Scotland": ["International College Dundee (ICD)", "Edinburgh Napier University International College (ENUIC)", "Edinburgh Napier University", "University of the West of Scotland (UWS)"],
+      "Wales": ["Bangor University International College (BUIC)", "Bangor University", "University of South Wales (USW)"],
+      "Multiple UK locations": ["BPP University", "Arden University", "BIMM University", "Health Sciences University"]
+    },
+    reqs: "IELTS 6.0 - 6.5 (or PTE equivalent), min 55% in academics, and academic reference letters.",
     counsellor: "Sudip Puri, Pratik Dhital, Samyog Rai, Bikram Dhamala, Sakuntala Puri, Sujata Katwal"
   },
   australia: {
-    title: "🇦🇺 Study in Australia",
-    desc: "Australia provides excellent global rankings, high standards of living, and clear post-study work rights.",
-    unis: ["Deakin University", "Swinburne University", "Western Sydney University", "La Trobe University"],
-    reqs: "IELTS 6.0 - 6.5, min 60% in high school/bachelors, genuine student (GS) criteria verification.",
+    name: "Study in Australia",
+    flag: "Australia fag.jpg",
+    desc: "Find Australian universities by state or territory, with strong education, lifestyle, and post-study work options.",
+    locations: {
+      "Victoria (VIC)": ["University of Melbourne", "Monash University", "Deakin University", "La Trobe University", "RMIT University", "Swinburne University of Technology", "Federation University"],
+      "New South Wales (NSW)": ["University of Sydney", "University of New South Wales (UNSW Sydney)", "University of Technology Sydney (UTS)", "Macquarie University", "Western Sydney University", "University of Wollongong", "University of Newcastle"],
+      "Queensland (QLD)": ["University of Queensland", "Queensland University of Technology (QUT)", "Central Queensland University", "University of Southern Queensland", "University of the Sunshine Coast", "James Cook University", "Griffith University"],
+      "Western Australia (WA)": ["University of Western Australia", "Curtin University"],
+      "South Australia (SA)": ["University of Adelaide", "University of South Australia"],
+      "Tasmania (TAS)": ["University of Tasmania"],
+      "Northern Territory (NT)": ["Charles Darwin University"],
+      "Australian Capital Territory (ACT)": ["Australian National University (ANU)"],
+      "Multiple / National": ["Charles Sturt University", "Southern Cross University"]
+    },
+    reqs: "IELTS 6.0 - 6.5, min 60% in high school or bachelor's study, and genuine student (GS) criteria verification.",
     counsellor: "Sudip Puri, Pratik Dhital, Samyog Rai"
   },
-  canada: {
-    title: "🇨🇦 Study in Canada",
-    desc: "Canada is top-ranked for affordable tuition, welcoming immigration frameworks, and Post-Graduation Work Permits (PGWP).",
-    unis: ["Seneca College", "Humber College", "University of Canada West", "Conestoga College"],
-    reqs: "IELTS 6.5 (no band less than 6.0), strong financial proofs, clear study plan Statement of Purpose.",
-    counsellor: "Samyog Rai"
-  },
   nz: {
-    title: "🇳🇿 Study in New Zealand",
-    desc: "Experience high-quality practical education and safe living environments in top New Zealand institutes.",
-    unis: ["University of Auckland", "AUT University", "Lincoln University", "Ara Institute"],
-    reqs: "IELTS 6.0+, academic transcripts, financial proof for fees and NZD 20,000 yearly living expenses.",
+    name: "Study in New Zealand",
+    flag: "NZ flag.jpg",
+    desc: "Compare trusted New Zealand universities by city and region in a safe, practical study environment.",
+    locations: { "Auckland": ["University of Auckland", "Auckland University of Technology (AUT)"], "Otago": ["University of Otago"], "Wellington": ["Victoria University of Wellington"], "Canterbury": ["University of Canterbury", "Lincoln University"], "Waikato": ["University of Waikato"], "Multiple locations": ["Massey University"] },
+    reqs: "IELTS 6.0+, academic transcripts, and financial proof for fees and NZD 20,000 yearly living expenses.",
     counsellor: "Pratik Dhital, Bikram Dhamala, Mukesh Lamichhane"
   },
+  canada: {
+    name: "Study in Canada",
+    flag: "Canada flag.jpg",
+    desc: "Browse Canadian institutions by province, with pathways to high-quality education and post-graduation work permits.",
+    locations: { "Ontario": ["University of Toronto", "York University", "Toronto Metropolitan University (TMU)", "McMaster University", "Western University", "Queen's University", "Brock University", "Lakehead University", "Laurentian University", "Trent University"], "British Columbia (BC)": ["University of British Columbia (UBC)", "Simon Fraser University (SFU)", "University Canada West (UCW)", "Fairleigh Dickinson University - Vancouver", "Royal Roads University", "University of Northern British Columbia (UNBC)", "Thompson Rivers University", "Vancouver Island University"], "Alberta": ["University of Alberta", "University of Calgary", "MacEwan University"], "Manitoba": ["University of Manitoba", "University of Winnipeg"], "Quebec": ["McGill University", "Concordia University"], "Saskatchewan": ["University of Regina"], "Nova Scotia": ["Dalhousie University", "Cape Breton University"], "Newfoundland and Labrador": ["Memorial University of Newfoundland"], "Prince Edward Island": ["University of Prince Edward Island (UPEI)"], "New Brunswick": ["No institution from the provided list"] },
+    reqs: "IELTS 6.5 (no band less than 6.0), strong financial proof, and a clear study plan or Statement of Purpose.",
+    counsellor: "Samyog Rai"
+  },
   japan: {
-    title: "🇯🇵 Study in Japan",
-    desc: "Top choice for high tech innovations, generous scholarship grants, and part-time work options during studies.",
-    unis: ["Tokyo International University", "Kyoto University", "Waseda University", "Japanese Language Schools"],
+    name: "Study in Japan",
+    flag: "japan flag.jpg",
+    desc: "Choose language schools, vocational colleges, and universities by Japanese city.",
+    locations: { "Tokyo": ["KCP International Language School", "Human Academy Japanese Language School", "Intercultural Institute of Japan", "Sendagaya Japanese Institute", "KAI Japanese Language School", "Nippon Engineering College", "HAL College of Technology & Design", "Tokyo Mode Gakuen", "Japan Electronics College", "Waseda University", "Sophia University", "University of Tokyo"], "Osaka": ["Human Academy Japanese Language School", "HAL College of Technology & Design"], "Nagoya": ["HAL College of Technology & Design"], "Kyoto": ["Kyoto University"], "Oita": ["Ritsumeikan Asia Pacific University (APU)"] },
     reqs: "JLPT N5/N4 certification or 150 hours of certified Japanese language study.",
     counsellor: "Sudip Puri, Mukesh Lamichhane, Sakuntala Puri, Sujata Katwal"
   },
   skorea: {
-    title: "🇰🇷 Study in South Korea",
-    desc: "South Korea provides affordable tuition, cutting-edge technology programs, and GKS scholarships.",
-    unis: ["Seoul National University", "KAIST", "Hanyang University", "Yonsei University"],
+    name: "Study in South Korea",
+    flag: "SK flag.png",
+    desc: "Explore Korean language institutes and universities by city, including scholarship-focused study routes.",
+    locations: { "Seoul": ["Sogang University Korean Language Education Center", "Ewha Womans University Language Center", "Seoul National University Language Education Institute", "Seoul National University (SNU)", "Korea University", "Yonsei University", "Hanyang University", "Kyung Hee University", "Sungkyunkwan University (SKKU)", "Sejong University"], "Asan": ["Sun Moon University Language Institute"], "Suwon / Seoul": ["Sungkyunkwan University (SKKU)"], "Daejeon": ["KAIST (Korea Advanced Institute of Science and Technology)"] },
     reqs: "TOPIK Level 3+ or IELTS 5.5+ for English-medium degree programs.",
     counsellor: "Sudip Puri, Mukesh Lamichhane, Sakuntala Puri"
   }
@@ -148,22 +170,36 @@ function switchCountryTab(countryKey, evt) {
   const box = document.getElementById('country-detail-box');
 
   if (data && box) {
-    let uniList = data.unis.map(u => `<li><i class="fa-solid fa-check" style="color:var(--gold);"></i> ${u}</li>`).join('');
+    const locationNames = Object.keys(data.locations);
+    const renderLocation = (locationName) => {
+      const institutions = data.locations[locationName] || [];
+      return institutions.map(institution => `<li><i class="fa-solid fa-check" style="color:var(--gold);"></i> ${institution}</li>`).join('');
+    };
 
     box.innerHTML = `
-      <h3>${data.title}</h3>
+      <div class="country-heading">
+        <img src="${data.flag}" alt="${data.name} flag">
+        <h3>${data.name}</h3>
+      </div>
       <p>${data.desc}</p>
-      <br>
-      <h4>Top Partner Universities:</h4>
-      <ul style="list-style:none; margin: 10px 0;">${uniList}</ul>
-      <br>
-      <h4>General Requirements:</h4>
-      <p>${data.reqs}</p>
-      <br>
-      <p><strong>Dedicated Counsellors:</strong> ${data.counsellor}</p>
-      <br>
+      <div class="form-group" style="margin-top: 20px;">
+        <label for="country-location-select">Choose a location</label>
+        <select id="country-location-select" aria-label="Choose a location">
+          ${locationNames.map(location => `<option value="${location}">${location}</option>`).join('')}
+        </select>
+      </div>
+      <h4 id="location-heading">Institutions in ${locationNames[0]}:</h4>
+      <ul id="location-institution-list" style="list-style:none; margin: 10px 0;">${renderLocation(locationNames[0])}</ul>
       <button class="btn btn-gold" onclick="openBookingModal('${countryKey}')">Book Consultation For ${countryKey.toUpperCase()}</button>
     `;
+
+    const locationSelect = document.getElementById('country-location-select');
+    const locationHeading = document.getElementById('location-heading');
+    const institutionList = document.getElementById('location-institution-list');
+    locationSelect.addEventListener('change', () => {
+      locationHeading.textContent = `Institutions in ${locationSelect.value}:`;
+      institutionList.innerHTML = renderLocation(locationSelect.value);
+    });
   }
 }
 
