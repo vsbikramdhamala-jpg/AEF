@@ -39,8 +39,7 @@
         <li><a href="#" data-page="about" class="nav-btn" onclick="switchTab('about', event)">About</a></li>
         <li><a href="#" data-page="products" class="nav-btn" onclick="switchTab('products', event)">Our Products</a></li>
         <li><a href="#" data-page="visa" class="nav-btn" onclick="switchTab('visa', event)">Visa & Docs</a></li>
-        <li><a href="#" data-page="stories" class="nav-btn" onclick="switchTab('stories', event)">Success Stories</a></li>
-        <li><a href="#" data-page="blog" class="nav-btn" onclick="switchTab('blog', event)">Blog/News</a></li>
+        <li><a href="#" data-page="costs" class="nav-btn" onclick="switchTab('costs', event)">Study Costs</a></li>
         <li><a href="#" data-page="contact" class="nav-btn" onclick="switchTab('contact', event)">Contact</a></li>
       </ul>
       <button class="btn btn-gold" onclick="openBookingModal()">Book Counselling</button>
@@ -292,12 +291,12 @@
     </div>
 
     <div class="country-tabs">
-      <button class="tab-btn active" onclick="switchCountryTab('uk', event)">🇬🇧 UK</button>
-      <button class="tab-btn" onclick="switchCountryTab('australia', event)">🇦🇺 Australia</button>
-      <button class="tab-btn" onclick="switchCountryTab('canada', event)">🇨🇦 Canada</button>
-      <button class="tab-btn" onclick="switchCountryTab('nz', event)">🇳🇿 New Zealand</button>
-      <button class="tab-btn" onclick="switchCountryTab('japan', event)">🇯🇵 Japan</button>
-      <button class="tab-btn" onclick="switchCountryTab('skorea', event)">🇰🇷 South Korea</button>
+      <button class="tab-btn active" onclick="switchCountryTab('uk', event)"><img src="UK flag.png" alt="United Kingdom flag"><span>UK</span></button>
+      <button class="tab-btn" onclick="switchCountryTab('australia', event)"><img src="Australia fag.jpg" alt="Australia flag"><span>Australia</span></button>
+      <button class="tab-btn" onclick="switchCountryTab('canada', event)"><img src="Canada flag.jpg" alt="Canada flag"><span>Canada</span></button>
+      <button class="tab-btn" onclick="switchCountryTab('nz', event)"><img src="NZ flag.jpg" alt="New Zealand flag"><span>New Zealand</span></button>
+      <button class="tab-btn" onclick="switchCountryTab('japan', event)"><img src="japan flag.jpg" alt="Japan flag"><span>Japan</span></button>
+      <button class="tab-btn" onclick="switchCountryTab('skorea', event)"><img src="SK flag.png" alt="South Korea flag"><span>South Korea</span></button>
     </div>
 
     <div id="country-detail-box" class="about-card">
@@ -309,96 +308,145 @@
   <section id="page-visa" class="page-section container section-padding">
     <div class="section-title">
       <h2>Visa & Documentation Guidelines</h2>
-      <p>Comprehensive document preparation guidelines to ensure 100% visa success rates.</p>
+      <p>A clear preparation path for Nepalese students, from profile screening to visa lodgement and pre-departure.</p>
     </div>
 
-    <div class="services-grid">
-      <div class="service-box">
-        <i class="fa-solid fa-file-pdf"></i>
-        <h4>1. Academic Record</h4>
-        <p>Transcripts, Character Certificates, Provisional/Degree Certificates from Grade 10 to Highest Level.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <span class="process-number">01</span>
+        <i class="fa-solid fa-user-check"></i>
+        <h4>Profile screening</h4>
+        <p>Review academics, study gaps, work history, English level, budget, and the best-fit destination.</p>
       </div>
-      <div class="service-box">
-        <i class="fa-solid fa-language"></i>
-        <h4>2. Proficiency Test</h4>
-        <p>IELTS, PTE, TOEFL, or JLPT / TOPIK language test scorecard with necessary band criteria.</p>
+      <div class="process-step">
+        <span class="process-number">02</span>
+        <i class="fa-solid fa-building-columns"></i>
+        <h4>Course and application</h4>
+        <p>Select a suitable course and institution, then prepare and submit a complete university application.</p>
       </div>
-      <div class="service-box">
-        <i class="fa-solid fa-vault"></i>
-        <h4>3. Financial Support</h4>
-        <p>Bank balances, Property Valuation, Income Source Statements, and Tax Clearance certificates.</p>
+      <div class="process-step">
+        <span class="process-number">03</span>
+        <i class="fa-solid fa-file-signature"></i>
+        <h4>Offer and compliance</h4>
+        <p>Meet conditions, pay the required deposit, and obtain CAS, CoE, or the relevant confirmation document.</p>
       </div>
-      <div class="service-box">
+      <div class="process-step">
+        <span class="process-number">04</span>
         <i class="fa-solid fa-passport"></i>
-        <h4>4. Passport & Identity</h4>
-        <p>Valid Passport (min 1-year validity), Citizenship ID, Relationship verification documentation.</p>
+        <h4>Visa lodgement</h4>
+        <p>Complete the online form, pay the current fee, submit biometrics, and prepare for any interview.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-number">05</span>
+        <i class="fa-solid fa-plane-departure"></i>
+        <h4>Pre-departure</h4>
+        <p>Arrange accommodation, insurance, travel, financial access, and an orientation before departure.</p>
       </div>
     </div>
 
-    <div class="sub-heading" style="margin-top: 40px;">Frequently Asked Questions (FAQs)</div>
+    <div class="visa-checklist-layout">
+      <div class="about-card checklist-card">
+        <h3><i class="fa-solid fa-clipboard-check"></i> Core document checklist</h3>
+        <p class="card-intro">Prepare clear colour scans and keep the originals available. Exact requirements vary by country, course, and applicant profile.</p>
+        <div class="checklist-grid">
+          <div><i class="fa-solid fa-check"></i><span>Valid passport and recent photographs</span></div>
+          <div><i class="fa-solid fa-check"></i><span>Citizenship and civil documents</span></div>
+          <div><i class="fa-solid fa-check"></i><span>Academic certificates and transcripts</span></div>
+          <div><i class="fa-solid fa-check"></i><span>IELTS, PTE, TOEFL, JLPT, or TOPIK result</span></div>
+          <div><i class="fa-solid fa-check"></i><span>Offer letter and tuition payment receipt</span></div>
+          <div><i class="fa-solid fa-check"></i><span>CAS, CoE, or country-specific enrolment confirmation</span></div>
+          <div><i class="fa-solid fa-check"></i><span>Bank statements and source of funds</span></div>
+          <div><i class="fa-solid fa-check"></i><span>Sponsor, relationship, income, and tax documents</span></div>
+          <div><i class="fa-solid fa-check"></i><span>SOP, study plan, or Genuine Student answers</span></div>
+          <div><i class="fa-solid fa-check"></i><span>Employment and gap evidence where applicable</span></div>
+          <div><i class="fa-solid fa-check"></i><span>Medical, police, biometrics, or TB documents if requested</span></div>
+          <div><i class="fa-solid fa-check"></i><span>Visa fee, health cover, and appointment receipts</span></div>
+        </div>
+      </div>
+      <div class="about-card country-visa-card">
+        <h3><i class="fa-solid fa-globe"></i> Country checkpoints</h3>
+        <div class="country-checkpoint"><strong>UK</strong><span>Offer, CAS, funds, English proof, tuberculosis test where applicable, and Student visa application.</span></div>
+        <div class="country-checkpoint"><strong>Australia</strong><span>Offer and CoE, Genuine Student responses, financial evidence, OSHC, health, and character documents.</span></div>
+        <div class="country-checkpoint"><strong>Canada</strong><span>Letter of Acceptance, PAL/TAL where required, proof of funds, study plan, biometrics, and medical checks.</span></div>
+        <div class="country-checkpoint"><strong>New Zealand</strong><span>Offer of Place, funds, insurance, health and character evidence, and a credible study plan.</span></div>
+        <div class="country-checkpoint"><strong>Japan / Korea</strong><span>Admission or language-school documents, financial sponsor proof, health documents, and COE or visa paperwork.</span></div>
+      </div>
+    </div>
+
+    <div class="visa-note">
+      <i class="fa-solid fa-circle-info"></i>
+      <p>Visa rules, funds, fees, work rights, and required forms can change. Confirm the final checklist on the official immigration website before submission. Aurora can help organize documents and prepare your application, but no visa outcome can be guaranteed.</p>
+    </div>
+
+    <div class="sub-heading">Frequently Asked Questions</div>
     <div class="faq-accordion">
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">How much bank balance is required for visa filing? <i class="fa-solid fa-chevron-down"></i></div>
-        <div class="faq-a">Requirements vary by country. For the UK and Australia, you generally need to show tuition fees plus 1 year of living costs (approx. NPR 35–45 Lakhs) held for a specific period.</div>
+        <div class="faq-q">How early should I start? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="faq-a">Start around four to eight months before your intended intake so there is time for testing, applications, offer conditions, financial preparation, CAS or CoE, and visa processing.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">Can I apply with gap years in my education? <i class="fa-solid fa-chevron-down"></i></div>
-        <div class="faq-a">Yes! Education gaps can be accepted if supported with genuine work experience, salary receipts, and official tax/appointment documentation.</div>
+        <div class="faq-q">Can I apply with a study gap? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="faq-a">Often yes, when the gap is explained with genuine work, training, family, or other supporting evidence that connects to your current study plan.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What happens after I receive an offer? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="faq-a">Review every condition, pay the required deposit, collect the final enrolment confirmation, check funds and health requirements, then submit the correct visa application.</div>
       </div>
     </div>
   </section>
 
-  <!-- PAGE 5: SUCCESS STORIES -->
-  <section id="page-stories" class="page-section container section-padding">
+  <!-- PAGE 5: STUDY COSTS -->
+  <section id="page-costs" class="page-section container section-padding">
     <div class="section-title">
-      <h2>Student Success Stories</h2>
-      <p>Read real testimonials from Nepalese students now studying at top global universities.</p>
+      <h2>Study Costs Guide 2026</h2>
+      <p>Plan tuition, living expenses, visa-related costs, and an initial arrival budget before choosing your destination.</p>
     </div>
 
-    <div class="destination-grid">
-      <div class="service-box">
-        <h4>Aarav Shrestha 🇬🇧</h4>
-        <p style="color: var(--accent); font-weight:600;">MSc Data Science - University of Hertfordshire</p>
-        <p><em>"Aurora Education simplified my entire visa process. Bikram Sir was supportive with my interview prep!"</em></p>
-      </div>
-      <div class="service-box">
-        <h4>Sujata Karki 🇦🇺</h4>
-        <p style="color: var(--accent); font-weight:600;">Bachelor of Nursing - Deakin University</p>
-        <p><em>"I received my Australian Student Visa within 2 weeks of lodging! Highly professional team."</em></p>
-      </div>
-      <div class="service-box">
-        <h4>Bibek Gurung 🇨🇦</h4>
-        <p style="color: var(--accent); font-weight:600;">Diploma in Business - Seneca College</p>
-        <p><em>"Clear financial guidance and transparent fee structures. Thank you Aurora team!"</em></p>
-      </div>
+    <div class="cost-grid">
+      <article class="cost-card cost-uk">
+        <div class="cost-card-header"><span>🇬🇧</span><div><h3>United Kingdom</h3><p>Shorter degree structures</p></div></div>
+        <div class="cost-row"><span>Tuition / year</span><strong>GBP 12,000 - 25,000</strong></div>
+        <div class="cost-row"><span>Living / year</span><strong>GBP 10,827+ outside London<br>GBP 14,130+ London</strong></div>
+        <p class="cost-caption">Also budget for visa fee, Immigration Health Surcharge, English testing, deposit, and flights.</p>
+      </article>
+      <article class="cost-card cost-australia">
+        <div class="cost-card-header"><span>🇦🇺</span><div><h3>Australia</h3><p>Wide course and city choice</p></div></div>
+        <div class="cost-row"><span>Tuition / year</span><strong>AUD 20,000 - 45,000</strong></div>
+        <div class="cost-row"><span>Living / year</span><strong>AUD 24,505+ guideline</strong></div>
+        <p class="cost-caption">Also budget for CoE deposit, student visa, OSHC, English testing, flights, and accommodation setup.</p>
+      </article>
+      <article class="cost-card cost-canada">
+        <div class="cost-card-header"><span>🇨🇦</span><div><h3>Canada</h3><p>University and college pathways</p></div></div>
+        <div class="cost-row"><span>Tuition / year</span><strong>CAD 15,000 - 35,000</strong></div>
+        <div class="cost-row"><span>Living / year</span><strong>CAD 20,635+ guideline</strong></div>
+        <p class="cost-caption">Also budget for a deposit, study permit, biometrics, PAL/TAL where required, medicals, and flights.</p>
+      </article>
+      <article class="cost-card cost-nz">
+        <div class="cost-card-header"><span>🇳🇿</span><div><h3>New Zealand</h3><p>Practical, career-focused study</p></div></div>
+        <div class="cost-row"><span>Tuition / year</span><strong>NZD 22,000 - 40,000</strong></div>
+        <div class="cost-row"><span>Living / year</span><strong>NZD 20,000+ guideline</strong></div>
+        <p class="cost-caption">Also budget for visa, insurance, medicals, English testing, flights, and initial accommodation.</p>
+      </article>
+      <article class="cost-card cost-japan">
+        <div class="cost-card-header"><span>🇯🇵</span><div><h3>Japan</h3><p>Language, vocational, and degree routes</p></div></div>
+        <div class="cost-row"><span>Tuition / year</span><strong>JPY 600,000 - 1,800,000</strong></div>
+        <div class="cost-row"><span>Living / year</span><strong>JPY 900,000 - 1,500,000</strong></div>
+        <p class="cost-caption">Costs vary significantly by language school, vocational college, university, and city.</p>
+      </article>
+      <article class="cost-card cost-korea">
+        <div class="cost-card-header"><span>🇰🇷</span><div><h3>South Korea</h3><p>Language and scholarship routes</p></div></div>
+        <div class="cost-row"><span>Tuition / year</span><strong>KRW 4,000,000 - 12,000,000</strong></div>
+        <div class="cost-row"><span>Living / year</span><strong>KRW 8,000,000 - 15,000,000</strong></div>
+        <p class="cost-caption">Plan for admission, visa, language testing, accommodation deposit, flights, and settlement costs.</p>
+      </article>
     </div>
-  </section>
 
-  <!-- PAGE 6: BLOG / NEWS -->
-  <section id="page-blog" class="page-section container section-padding">
-    <div class="section-title">
-      <h2>Latest News & Articles</h2>
-      <p>Stay updated on foreign immigration policies, intakes, and university updates.</p>
+    <div class="budget-panel">
+      <div><span class="eyebrow">Planning before applying</span><h3>Build a realistic first-year budget</h3><p>Compare the total, not just the tuition. Include the first payment, living funds, visa costs, insurance, flights, and an emergency reserve.</p></div>
+      <button class="btn btn-gold" onclick="openBookingModal()"><i class="fa-solid fa-calculator"></i> Discuss Your Budget</button>
     </div>
 
-    <div class="destination-grid">
-      <div class="service-box">
-        <span class="badge" style="margin-bottom:10px;">Scholarship Update</span>
-        <h4>UK Chevening & University Scholarships 2026 Intake</h4>
-        <p>Discover fully funded scholarship applications open for Nepalese post-graduate students.</p>
-      </div>
-      <div class="service-box">
-        <span class="badge" style="margin-bottom:10px;">Visa News</span>
-        <h4>Australia Post-Study Work Rights Guideline Changes</h4>
-        <p>Learn how the updated work visa rules impact international students graduating this year.</p>
-      </div>
-      <div class="service-box">
-        <span class="badge" style="margin-bottom:10px;">Intake Announcement</span>
-        <h4>Japan April Intake Language & Degree Applications Open</h4>
-        <p>Complete step-by-step guidance on COE application deadlines and language requirements.</p>
-      </div>
-    </div>
-  </section>
+ </section>
 
   <!-- PAGE 7: CONTACT US -->
 <!-- PAGE 7: CONTACT US -->
