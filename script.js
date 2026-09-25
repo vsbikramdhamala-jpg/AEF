@@ -66,15 +66,18 @@ const countryData = {
   }
 };
 
+// Replace this placeholder with the Formspree endpoint connected to Aurora's email.
+const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_FORM_ID";
+
 // Counsellors mapping database
 const counsellorsData = [
-  { name: "Sudip Puri", destinations: ["United Kingdom", "Japan", "South Korea", "Australia"] },
-  { name: "Pratik Dhital", destinations: ["United Kingdom", "Australia", "New Zealand"] },
-  { name: "Samyog Rai", destinations: ["Australia", "United Kingdom", "Canada"] },
-  { name: "Bikram Dhamala", destinations: ["United Kingdom", "New Zealand"] },
-  { name: "Mukesh Lamichhane", destinations: ["South Korea", "Japan", "New Zealand"] },
-  { name: "Sakuntala Puri", destinations: ["United Kingdom", "Japan", "South Korea"] },
-  { name: "Sujata Katwal", destinations: ["United Kingdom", "Japan"] }
+  { name: "Sudip Puri", phone: "+9779851003826", destinations: ["United Kingdom", "Japan", "South Korea", "Australia"] },
+  { name: "Pratik Dhital", phone: "+9779851321500", destinations: ["United Kingdom", "Australia", "New Zealand"] },
+  { name: "Samyog Rai", phone: "+9779768552904", destinations: ["Australia", "United Kingdom", "Canada"] },
+  { name: "Bikram Dhamala", phone: "+9779768552905", destinations: ["United Kingdom", "New Zealand"] },
+  { name: "Mukesh Lamichhane", phone: "+9779851348506", destinations: ["South Korea", "Japan", "New Zealand"] },
+  { name: "Sakuntala Puri", phone: "+9779860378406", destinations: ["United Kingdom", "Japan", "South Korea"] },
+  { name: "Sujata Katwal", phone: "+9779768552905", destinations: ["United Kingdom", "Japan"] }
 ];
 
 // Key-to-Full Name helper for modal pre-selection
@@ -160,11 +163,8 @@ function scrollToDestinations() {
 
 // Country Tab Swapper for Page 3
 function switchCountryTab(countryKey, evt) {
-  if (evt) {
-    const tabBtns = document.querySelectorAll('.country-tabs .tab-btn');
-    tabBtns.forEach(btn => btn.classList.remove('active'));
-    evt.currentTarget.classList.add('active');
-  }
+  const tabBtns = document.querySelectorAll('.country-tabs .tab-btn');
+  tabBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.country === countryKey));
 
   const data = countryData[countryKey];
   const box = document.getElementById('country-detail-box');
@@ -242,6 +242,12 @@ function closeBookingModal() {
     bookingForm.reset();
     filterCounsellors();
   }
+
+  const bookingStatus = document.getElementById('bookingFormStatus');
+  if (bookingStatus) {
+    bookingStatus.textContent = '';
+    bookingStatus.className = 'form-status';
+  }
 }
 
 // Toggle FAQs
@@ -249,20 +255,117 @@ function toggleFaq(element) {
   element.classList.toggle('active');
 }
 
+function openTeamProfile(card) {
+  const modal = document.getElementById('teamProfileModal');
+  const content = card ? card.querySelector('.team-profile-data') : null;
+  const target = document.getElementById('teamProfileContent');
+
+  if (!modal || !content || !target) return;
+
+  target.innerHTML = content.innerHTML;
+  modal.style.display = 'flex';
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+function closeTeamProfile() {
+  const modal = document.getElementById('teamProfileModal');
+  const target = document.getElementById('teamProfileContent');
+
+  if (!modal) return;
+
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
+  if (target) target.innerHTML = '';
+}
+
 // Form Handlers
-function handleBookingSubmit(e) {
+async function submitForm(form, statusId, successMessage) {
+  const status = document.getElementById(statusId);
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  if (FORM_ENDPOINT.includes('YOUR_FORMSPREE_FORM_ID')) {
+    status.textContent = 'Form service is not configured yet. Add the Formspree endpoint in script.js.';
+    status.className = 'form-status form-status-error';
+    return false;
+  }
+
+  if (submitButton) submitButton.disabled = true;
+  status.textContent = 'Sending...';
+  status.className = 'form-status form-status-pending';
+
+  try {
+    const response = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (!response.ok) throw new Error('Form submission failed');
+
+    status.textContent = successMessage;
+    status.className = 'form-status form-status-success';
+    form.reset();
+    return true;
+  } catch (error) {
+    status.textContent = 'Unable to send right now. Please call or WhatsApp Aurora directly.';
+    status.className = 'form-status form-status-error';
+    return false;
+  } finally {
+    if (submitButton) submitButton.disabled = false;
+  }
+}
+
+async function handleBookingSubmit(e) {
   e.preventDefault();
-  alert('Thank you! Your counselling appointment has been booked. Our team will contact you shortly.');
-  closeBookingModal();
+  const form = e.currentTarget;
+  const counsellor = counsellorsData.find(item => item.name === form.querySelector('#modal-counsellor-select').value);
+  let phoneField = form.querySelector('[name="Counsellor Contact Number"]');
+
+  if (!phoneField) {
+    phoneField = document.createElement('input');
+    phoneField.type = 'hidden';
+    phoneField.name = 'Counsellor Contact Number';
+    form.appendChild(phoneField);
+  }
+
+  phoneField.value = counsellor ? counsellor.phone : 'Any available counsellor';
+  const sent = await submitForm(form, 'bookingFormStatus', 'Booking request sent. Aurora will contact you shortly.');
+  if (sent) closeBookingModal();
 }
 
 function handleContactSubmit(e) {
   e.preventDefault();
-  alert('Thank you for messaging Aurora Education! We will reply via email/phone soon.');
+  updateContactEnquiryOptions();
+  submitForm(e.currentTarget, 'contactFormStatus', 'Your enquiry has been sent. Aurora will reply by email or phone.');
+}
+
+function updateContactEnquiryOptions() {
+  const typeSelect = document.getElementById('contact-enquiry-type');
+  const destinationGroup = document.getElementById('contact-destination-group');
+  const destinationSelect = document.getElementById('contact-destination');
+  const enquiryValue = document.getElementById('contact-enquiry-value');
+
+  if (!typeSelect || !destinationGroup || !destinationSelect || !enquiryValue) return;
+
+  const isStudyAbroad = typeSelect.value === 'Study Abroad';
+  destinationGroup.hidden = !isStudyAbroad;
+  destinationSelect.required = isStudyAbroad;
+
+  if (isStudyAbroad) {
+    enquiryValue.value = destinationSelect.value ? `Study Abroad - ${destinationSelect.value}` : '';
+  } else {
+    destinationSelect.value = '';
+    enquiryValue.value = typeSelect.value;
+  }
 }
 
 // Initialization on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   switchTab('home');
   switchCountryTab('uk');
+  updateContactEnquiryOptions();
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeTeamProfile();
+  });
 });

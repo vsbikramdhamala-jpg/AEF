@@ -1,0 +1,529 @@
+// ===============================
+// COUNTRY DATA
+// ===============================
+
+const countryData = {
+    uk: {
+        title: "Study in the UK",
+        desc: "Explore leading UK universities and study opportunities.",
+        universities: [
+            "University of Hertfordshire",
+            "Coventry University",
+            "University of Greenwich",
+            "Ulster University"
+        ],
+        requirements: [
+            "Academic qualification",
+            "English language requirement",
+            "Valid passport",
+            "Financial documents"
+        ],
+        counsellors: [
+            "Sudip Puri",
+            "Pratik Dhital"
+        ]
+    },
+
+    australia: {
+        title: "Study in Australia",
+        desc: "Discover quality education and career opportunities in Australia.",
+        universities: [
+            "Deakin University",
+            "Swinburne University",
+            "Western Sydney University",
+            "La Trobe University"
+        ],
+        requirements: [
+            "Academic qualification",
+            "English language requirement",
+            "Valid passport",
+            "Financial documents"
+        ],
+        counsellors: [
+            "Samyog Rai",
+            "Sakku"
+        ]
+    },
+
+    canada: {
+        title: "Study in Canada",
+        desc: "Explore Canadian universities and colleges for international students.",
+        universities: [
+            "Seneca College",
+            "Humber College",
+            "University of Canada West",
+            "Conestoga College"
+        ],
+        requirements: [
+            "Academic qualification",
+            "English language requirement",
+            "Valid passport",
+            "Financial documents"
+        ],
+        counsellors: [
+            "Mukesh Lamichhane",
+            "Sujata Katwal"
+        ]
+    },
+
+    nz: {
+        title: "Study in New Zealand",
+        desc: "Find study opportunities at leading New Zealand institutions.",
+        universities: [
+            "University of Auckland",
+            "AUT University",
+            "Lincoln University",
+            "Ara Institute"
+        ],
+        requirements: [
+            "Academic qualification",
+            "English language requirement",
+            "Valid passport",
+            "Financial documents"
+        ],
+        counsellors: [
+            "Bikss",
+            "Sudip Puri"
+        ]
+    },
+
+    japan: {
+        title: "Study in Japan",
+        desc: "Explore Japanese universities and language study opportunities.",
+        universities: [
+            "Tokyo International University",
+            "Kyoto University",
+            "Waseda University",
+            "Japanese Language Schools"
+        ],
+        requirements: [
+            "Academic qualification",
+            "English or Japanese language requirement",
+            "Valid passport",
+            "Financial documents"
+        ],
+        counsellors: [
+            "Pratik Dhital",
+            "Samyog Rai"
+        ]
+    },
+
+    skorea: {
+        title: "Study in South Korea",
+        desc: "Explore higher education opportunities in South Korea.",
+        universities: [
+            "Seoul National University",
+            "KAIST",
+            "Hanyang University",
+            "Yonsei University"
+        ],
+        requirements: [
+            "Academic qualification",
+            "English or Korean language requirement",
+            "Valid passport",
+            "Financial documents"
+        ],
+        counsellors: [
+            "Sakku",
+            "Mukesh Lamichhane"
+        ]
+    }
+};
+
+
+// ===============================
+// COUNSELLORS DATA
+// ===============================
+
+const counsellorsData = {
+    "Sudip Puri": ["uk", "nz"],
+    "Pratik Dhital": ["uk", "japan"],
+    "Samyog Rai": ["australia", "japan"],
+    "Sakku": ["australia", "skorea"],
+    "Mukesh Lamichhane": ["canada", "skorea"],
+    "Sujata Katwal": ["canada"],
+    "Bikss": ["nz"]
+};
+
+
+// ===============================
+// COUNTRY KEY TO FULL NAME
+// ===============================
+
+const countryKeyToFullName = {
+    uk: "United Kingdom",
+    australia: "Australia",
+    canada: "Canada",
+    nz: "New Zealand",
+    japan: "Japan",
+    skorea: "South Korea"
+};
+
+
+// ===============================
+// FILTER COUNSELLORS
+// ===============================
+
+function filterCounsellors() {
+    const destination =
+        document.getElementById("booking-destination")?.value;
+
+    const counsellorSelect =
+        document.getElementById("booking-counsellor");
+
+    if (!counsellorSelect) return;
+
+    counsellorSelect.innerHTML =
+        '<option value="">Select Counsellor</option>';
+
+    if (!destination) return;
+
+    Object.keys(counsellorsData).forEach(name => {
+        if (counsellorsData[name].includes(destination)) {
+            const option = document.createElement("option");
+            option.value = name;
+            option.textContent = name;
+            counsellorSelect.appendChild(option);
+        }
+    });
+}
+
+
+// ===============================
+// MAIN TAB SWITCHING
+// ===============================
+
+function switchTab(tabName) {
+    document.querySelectorAll(".page-section").forEach(section => {
+        section.classList.remove("active");
+    });
+
+    const selectedSection =
+        document.getElementById(tabName);
+
+    if (selectedSection) {
+        selectedSection.classList.add("active");
+    }
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.classList.remove("active");
+    });
+
+    const activeLink =
+        document.querySelector(`[data-page="${tabName}"]`);
+
+    if (activeLink) {
+        activeLink.classList.add("active");
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+// ===============================
+// SCROLL TO DESTINATIONS
+// ===============================
+
+function scrollToDestinations() {
+    const destinations =
+        document.getElementById("destinations");
+
+    if (destinations) {
+        destinations.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+}
+
+
+// ===============================
+// COUNTRY TAB SWITCHING
+// ===============================
+
+function switchCountryTab(country) {
+    document.querySelectorAll(".country-tab").forEach(tab => {
+        tab.classList.remove("active");
+    });
+
+    const selectedTab =
+        document.querySelector(`[data-country="${country}"]`);
+
+    if (selectedTab) {
+        selectedTab.classList.add("active");
+    }
+
+    const data = countryData[country];
+
+    if (!data) return;
+
+    const title =
+        document.getElementById("country-detail-title");
+
+    const description =
+        document.getElementById("country-detail-description");
+
+    const universityList =
+        document.getElementById("country-universities");
+
+    const requirementList =
+        document.getElementById("country-requirements");
+
+    if (title) {
+        title.textContent = data.title;
+    }
+
+    if (description) {
+        description.textContent = data.desc;
+    }
+
+    if (universityList) {
+        universityList.innerHTML = "";
+
+        data.universities.forEach(university => {
+            const li = document.createElement("li");
+            li.textContent = university;
+            universityList.appendChild(li);
+        });
+    }
+
+    if (requirementList) {
+        requirementList.innerHTML = "";
+
+        data.requirements.forEach(requirement => {
+            const li = document.createElement("li");
+            li.textContent = requirement;
+            requirementList.appendChild(li);
+        });
+    }
+}
+
+
+// ===============================
+// SELECT DESTINATION
+// ===============================
+
+function selectDestination(country) {
+    switchCountryTab(country);
+
+    const productsSection =
+        document.getElementById("products");
+
+    if (productsSection) {
+        productsSection.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+}
+
+
+// ===============================
+// OPEN BOOKING MODAL
+// ===============================
+
+function openBookingModal(destination = "") {
+    const modal =
+        document.getElementById("booking-modal");
+
+    if (!modal) return;
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+    const destinationSelect =
+        document.getElementById("booking-destination");
+
+    if (destinationSelect && destination) {
+        destinationSelect.value = destination;
+
+        filterCounsellors();
+    }
+}
+
+
+// ===============================
+// CLOSE BOOKING MODAL
+// ===============================
+
+function closeBookingModal() {
+    const modal =
+        document.getElementById("booking-modal");
+
+    if (!modal) return;
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+
+// ===============================
+// FAQ TOGGLE
+// ===============================
+
+function toggleFaq(element) {
+    const faqItem =
+        element.closest(".faq-item");
+
+    if (!faqItem) return;
+
+    const answer =
+        faqItem.querySelector(".faq-answer");
+
+    const icon =
+        faqItem.querySelector(".faq-icon");
+
+    const isOpen =
+        faqItem.classList.contains("active");
+
+    document.querySelectorAll(".faq-item").forEach(item => {
+        item.classList.remove("active");
+
+        const itemAnswer =
+            item.querySelector(".faq-answer");
+
+        const itemIcon =
+            item.querySelector(".faq-icon");
+
+        if (itemAnswer) {
+            itemAnswer.style.maxHeight = null;
+        }
+
+        if (itemIcon) {
+            itemIcon.textContent = "+";
+        }
+    });
+
+    if (!isOpen) {
+        faqItem.classList.add("active");
+
+        if (answer) {
+            answer.style.maxHeight =
+                answer.scrollHeight + "px";
+        }
+
+        if (icon) {
+            icon.textContent = "−";
+        }
+    }
+}
+
+
+// ===============================
+// BOOKING FORM SUBMIT
+// ===============================
+
+function handleBookingSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const name =
+        form.querySelector('[name="name"]')?.value || "";
+
+    const email =
+        form.querySelector('[name="email"]')?.value || "";
+
+    const phone =
+        form.querySelector('[name="phone"]')?.value || "";
+
+    const destination =
+        form.querySelector('[name="destination"]')?.value || "";
+
+    const counsellor =
+        form.querySelector('[name="counsellor"]')?.value || "";
+
+    if (!name || !email || !phone || !destination) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    alert(
+        "Thank you! Your counselling request has been submitted."
+    );
+
+    form.reset();
+
+    filterCounsellors();
+
+    closeBookingModal();
+}
+
+
+// ===============================
+// CONTACT FORM SUBMIT
+// ===============================
+
+function handleContactSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const name =
+        form.querySelector('[name="name"]')?.value || "";
+
+    const email =
+        form.querySelector('[name="email"]')?.value || "";
+
+    const message =
+        form.querySelector('[name="message"]')?.value || "";
+
+    if (!name || !email || !message) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    alert(
+        "Thank you for contacting Aurora Education Foundation. We will get back to you soon."
+    );
+
+    form.reset();
+}
+
+
+// ===============================
+// DOM CONTENT LOADED
+// ===============================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Set default home tab
+    switchTab("home");
+
+    // Set default country tab
+    switchCountryTab("uk");
+
+    // Destination change event
+    const destinationSelect =
+        document.getElementById("booking-destination");
+
+    if (destinationSelect) {
+        destinationSelect.addEventListener(
+            "change",
+            filterCounsellors
+        );
+    }
+
+    // Close modal when clicking outside
+    const modal =
+        document.getElementById("booking-modal");
+
+    if (modal) {
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeBookingModal();
+        }
+    });
+
+});
