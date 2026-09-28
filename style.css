@@ -1372,6 +1372,7 @@ button:disabled {
 
   .dest-card, .service-box, .team-card, .about-card {
     padding: 18px;
+      text-decoration: none;
   }
 }
 
