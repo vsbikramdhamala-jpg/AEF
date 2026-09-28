@@ -26,6 +26,13 @@
       <a href="#" class="logo" onclick="switchTab('home', event)">
         <img src="Aurora_Education-removebg-preview.png" alt="Aurora Education Foundation Logo" style="max-height: 130px; width: auto;">
       </a>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="#" data-page="home" class="nav-btn active" onclick="switchTab('home', event)">Home</a></li>
         <li><a href="#" data-page="about" class="nav-btn" onclick="switchTab('about', event)">About</a></li>
@@ -34,7 +41,7 @@
         <li><a href="#" data-page="costs" class="nav-btn" onclick="switchTab('costs', event)">Study Costs</a></li>
         <li><a href="#" data-page="contact" class="nav-btn" onclick="switchTab('contact', event)">Contact</a></li>
       </ul>
-      <button class="btn btn-gold" onclick="openBookingModal()">Book Counselling</button>
+      <button class="btn btn-gold nav-book-btn" onclick="openBookingModal()">Book Counselling</button>
     </div>
   </nav>
 
@@ -490,37 +497,37 @@
 
     <div class="cost-grid">
       <article class="cost-card cost-uk">
-        <div class="cost-card-header"><span>🇬🇧</span><div><h3>United Kingdom</h3><p>Shorter degree structures</p></div></div>
+        <div class="cost-card-header"><span></span><div><h3>United Kingdom</h3><p>Shorter degree structures</p></div></div>
         <div class="cost-row"><span>Tuition / year</span><strong>GBP 12,000 - 25,000</strong></div>
         <div class="cost-row"><span>Living / year</span><strong>GBP 10,827+ outside London<br>GBP 14,130+ London</strong></div>
         <p class="cost-caption">Also budget for visa fee, Immigration Health Surcharge, English testing, deposit, and flights.</p>
       </article>
       <article class="cost-card cost-australia">
-        <div class="cost-card-header"><span>🇦🇺</span><div><h3>Australia</h3><p>Wide course and city choice</p></div></div>
+        <div class="cost-card-header"><span></span><div><h3>Australia</h3><p>Wide course and city choice</p></div></div>
         <div class="cost-row"><span>Tuition / year</span><strong>AUD 20,000 - 45,000</strong></div>
         <div class="cost-row"><span>Living / year</span><strong>AUD 24,505+ guideline</strong></div>
         <p class="cost-caption">Also budget for CoE deposit, student visa, OSHC, English testing, flights, and accommodation setup.</p>
       </article>
       <article class="cost-card cost-canada">
-        <div class="cost-card-header"><span>🇨🇦</span><div><h3>Canada</h3><p>University and college pathways</p></div></div>
+        <div class="cost-card-header"><span></span><div><h3>Canada</h3><p>University and college pathways</p></div></div>
         <div class="cost-row"><span>Tuition / year</span><strong>CAD 15,000 - 35,000</strong></div>
         <div class="cost-row"><span>Living / year</span><strong>CAD 20,635+ guideline</strong></div>
         <p class="cost-caption">Also budget for a deposit, study permit, biometrics, PAL/TAL where required, medicals, and flights.</p>
       </article>
       <article class="cost-card cost-nz">
-        <div class="cost-card-header"><span>🇳🇿</span><div><h3>New Zealand</h3><p>Practical, career-focused study</p></div></div>
+        <div class="cost-card-header"><span></span><div><h3>New Zealand</h3><p>Practical, career-focused study</p></div></div>
         <div class="cost-row"><span>Tuition / year</span><strong>NZD 22,000 - 40,000</strong></div>
         <div class="cost-row"><span>Living / year</span><strong>NZD 20,000+ guideline</strong></div>
         <p class="cost-caption">Also budget for visa, insurance, medicals, English testing, flights, and initial accommodation.</p>
       </article>
       <article class="cost-card cost-japan">
-        <div class="cost-card-header"><span>🇯🇵</span><div><h3>Japan</h3><p>Language, vocational, and degree routes</p></div></div>
+        <div class="cost-card-header"><span></span><div><h3>Japan</h3><p>Language, vocational, and degree routes</p></div></div>
         <div class="cost-row"><span>Tuition / year</span><strong>JPY 600,000 - 1,800,000</strong></div>
         <div class="cost-row"><span>Living / year</span><strong>JPY 900,000 - 1,500,000</strong></div>
         <p class="cost-caption">Costs vary significantly by language school, vocational college, university, and city.</p>
       </article>
       <article class="cost-card cost-korea">
-        <div class="cost-card-header"><span>🇰🇷</span><div><h3>South Korea</h3><p>Language and scholarship routes</p></div></div>
+        <div class="cost-card-header"><span></span><div><h3>South Korea</h3><p>Language and scholarship routes</p></div></div>
         <div class="cost-row"><span>Tuition / year</span><strong>KRW 4,000,000 - 12,000,000</strong></div>
         <div class="cost-row"><span>Living / year</span><strong>KRW 8,000,000 - 15,000,000</strong></div>
         <p class="cost-caption">Plan for admission, visa, language testing, accommodation deposit, flights, and settlement costs.</p>
@@ -548,7 +555,7 @@
         
         <!-- Location Link -->
         <p>
-          <a href="https://maps.app.goo.gl/eJwx9JKddv46416P8" target="_blank" rel="noopener noreferrer">
+          <a href="https://maps.app.goo.gl/eJwx9JKddv46416P8" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
             <i class="fa-solid fa-location-dot"></i> Chabahil-07, Kathmandu, Nepal (Way to KL Tower)
           </a>
         </p>
@@ -570,12 +577,12 @@
         <!-- Telephone Call Links -->
         <p>
           <i class="fa-solid fa-phone"></i> 
-          <a href="tel:+977-01-5911096">+977-01-5911096</a>
+          <a href="tel:+977-01-5911096" style="text-decoration: none;">+977-01-5911096</a>
         </p>
 
         <!-- Email (Gmail) Link -->
         <p>
-          <a href="mailto:admission@auroraeducation.com.np">
+          <a href="mailto:admission@auroraeducation.com.np" style="text-decoration: none;">
             <i class="fa-solid fa-envelope"></i> admission@auroraeducation.com.np
           </a>
         </p>
